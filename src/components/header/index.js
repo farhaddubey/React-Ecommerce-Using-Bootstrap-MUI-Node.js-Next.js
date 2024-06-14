@@ -7,7 +7,12 @@ import CountryDropDown from '../drop_down_country';
 import { FaRegCircleUser } from 'react-icons/fa6';
 import SearchBox from './SearchBox';
 import Navigation from './navigations';
+import { useContext } from 'react';
+import { MyContext } from '../../App';
 const Header= ()=>{
+
+    const context = useContext(MyContext);
+
     return(
         <>
             <div className="headerWrapper">
@@ -26,7 +31,9 @@ const Header= ()=>{
                                 <Link to={'/'}><img src={gfgl} alt='Logo'/></Link>
                             </div>
                             <div className='col-sm-10 d-flex align-items-center part2'>
-                                <CountryDropDown/>
+                                {
+                                context.countryList.length!==0 && <CountryDropDown/>
+                                }
                                 {/* Header Search Bar Starts Here  */}
                                 <SearchBox/>
                                 {/* Header Search Bar Ends Here  */}

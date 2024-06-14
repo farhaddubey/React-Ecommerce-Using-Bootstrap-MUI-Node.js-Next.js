@@ -8,6 +8,7 @@ body{font-family: "Lato", sans-serif; font-size: 14px;}
 
 .bg-purple{background: #8e00a3;}
 
+.headerWrapper{border-bottom: 1px solid rgba(240, 240, 240, 0.951); padding-bottom: 10;}
 .headerWrapper .top-strip{padding: 8px 0px;}
 .headerWrapper .top-strip p{color: #fff; font-size: 12px; font-weight: 500;}
 .headerWrapper .header{width: 100%; height: auto;}
@@ -29,15 +30,7 @@ header .part3 .circle svg{font-size: 22px;}
 .cartTab .price{font-size: 18px; color: rgba(0, 0, 0, 0.8); font-weight: 700;}
 
 nav .navPart1{max-width: 20%; flex: 0 0 20%;}
-nav .navPart2{max-width: 20%; flex: 0 0 80%;}
-
-nav .allCatTab{background: #2bbef9; padding: 8px 20px !important; border-radius: 30px !important;}
-nav .allCatTab *{color: #fff;}
-nav .allCatTab:hover{background: #2bbef9;}
-nav .allCatTab .text{font-weight: 600;}
-
-new .allCatTab .icon1 svg{font-size: 25px !important;}
-new .allCatTab .icon2 svg{font-size: 25px !important;}
+nav .navPart2{max-width: 80%; flex: 0 0 80%;}
 
 nav .navPart2 ul{margin-bottom: 0px;}
 nav .navPart2 ul li a{font-size: 16px; font-weight: 600; text-decoration: none; color: rgba(0, 0, 0, 0.7); text-transform: uppercase; 
@@ -48,4 +41,52 @@ nav .navPart2 ul li a:hover{background: #f0faff; color: #2bbef9;}
 .locationModal .countryList{margin-bottom: 0px; max-height: 400px; overflow-y: scroll; overflow-x: hidden;}
 .locationModal .countryList li{width: 100%; list-style: none;}
 .locationModal .countryList li button{width: 100%; text-transform: capitalize !important; color: #000 !important; justify-content: flex-start !important;}
+.locationModal .countryList li button.active{background: #ccc !important;}
+
+nav .navPart2 ul li{position: relative;}
+nav .navPart2 ul li .submenu{position: absolute; top: 100%; left: 0px; min-width: 200px; background: #fff;
+    opacity: 0; visibility: hidden; transition: all .3s ease-in-out; z-index: 100;}
+nav .navPart2 ul li .submenu a{display: block; width: 100%;}
+nav .navPart2 ul li .submenu a button{ width: 100%; justify-content: flex-start !important; border-radius: 0px !important; text-transform: capitalize !important;
+font-weight: 600 !important;}
+nav .navPart2 ul li .submenu a button:hover{background: #f1f1f1 !important;}
+nav .navPart2 ul li:hover .submenu{opacity: 1; visibility: inherit; top: 100%;}
+
+nav .navPart1 .catWrapper{position: relative;}
+nav .navPart1 .catWrapper .sidebarNav{width: 100%; height:0px; background: #fff; position: absolute; top: 136%; left: 0px; 
+    padding: 15px; border: 1px solid rgba(0, 0, 0, 0.1); padding: 15px 0px; transition: all 0.2s;  z-index: 100; visibility: hidden;}
+nav .navPart1 .catWrapper .sidebarNav.open{height: auto; opacity: 1; visibility: inherit;   z-index: 100;} 
+/* Just cause of the space between .sidebarnav & .open it was not working  */
+nav .navPart1 .catWrapper .sidebarNav ul li{width: 100%; list-style: none; padding: 0px 15px;  z-index: 100;}
+nav .navPart1 .catWrapper .sidebarNav ul li button{color: #000; width: 100%; justify-content: flex-start; text-transform: capitalize !important;  z-index: 100;}
+nav .navPart1 .catWrapper .sidebarNav ul li button svg{font-size: 12px; opacity: .6;}
+nav .navPart1 .catWrapper .sidebarNav ul li button:hover{background: transparent !important;  z-index: 100;}
+
+nav .navPart1 .catWrapper .sidebarNav ul li{position: static;}
+nav .navPart1 .catWrapper .sidebarNav ul li .submenu{position: absolute; top: 0px; left: 100%; width: 250px; height: auto; 
+    background: #fff; z-index: 100; opacity: 0; visibility: hidden; transition: all .2s ease-in-out; 
+    border-left: 1px solid rgba(0, 0, 0, 0.3);}
+nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu{opacity: 1; visibility: inherit; left: 100%;}
+
+nav .allCatTab{background: #2bbef9; padding: 8px 20px !important; border-radius: 30px !important;}
+nav .allCatTab *{color: #fff;}
+nav .allCatTab:hover{background: #2bbef9;}
+nav .allCatTab .text{font-weight: 600;}
+
+new .allCatTab .icon1 svg{font-size: 25px !important;}
+new .allCatTab .icon2 svg{font-size: 25px !important;}
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
+
+.homeBannerSection{position: relative; overflow: hidden;}
+.homeBannerSection *{outline: none !important;}
+.homeBannerSection .slick-arrow{position: absolute; top: 45%; z-index: 100; display: flex; align-items: center; justify-content: center;
+width: 40px !important; height: 40px !important; background: #828282;}
+.homeBannerSection .slick-arrow.slick-next{right: 25 px !important;}
+.homeBannerSection .slick-arrow.slick-prev{left: 25 px !important;}
+/* To change side icons to font awesoe 1st to embed the link  and to add the below codes  */
+/* .homeBannerSection .slick-arrow.slick-next::before{font-family: FontAwesome !important; color: #fff;} */
+/* .homeBannerSection .slick-arrow.slick-prev::before{font-family: FontAwesome !important; color: #fff;} */
 
